@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bem-vindo - Controle de peso</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('https://source.unsplash.com/featured/?fitness');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .conteudo {
+      color: white;
+      text-shadow: 1px 1px 4px #000000; /* sombra preta sem transparência */
+    }
+
+    h2 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .titulo-app {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    .btn-acessar {
+      padding: 12px 24px;
+      background: #007BFF;
+      border: none;
+      border-radius: 25px;
+      color: white;
+      font-size: 18px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+
+    .btn-acessar:hover {
+      background: #007BFF;
+;
+    }
+  </style>
+</head>
+<body>
+  <div class="conteudo">
+    <div class="titulo-app">Aplicativo</div>
+    <h2>Controle de peso</h2>
+    <a href="principal.html" class="btn-acessar">Acessar</a>
+  </div>
+
+  <script>
+    const imagemSalva = localStorage.getItem('appBackground');
+    if (imagemSalva) {
+      document.body.style.backgroundImage = `url('${imagemSalva}')`;
+    }
+  </script>
+  
+
+</body>
+</html>
