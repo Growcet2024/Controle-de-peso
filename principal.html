@@ -1747,34 +1747,61 @@ function deleteEntry(index) {
       document.getElementById('imageInputContainer').style.display = 'block';
       document.getElementById('imageFileInputContainer').style.display = 'block'; // Mostra o seletor de arquivo
     }
-  
-    function salvarImagemFundo() {
-      const fileInput = document.getElementById('imageFileInput');
-      const file = fileInput.files[0];
-  
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-          const imageData = e.target.result;
-  
-          // Aplica como fundo e salva no localStorage
-          document.body.style.backgroundImage = `url('${imageData}')`;
-          localStorage.setItem('appBackground', imageData);
-  
-          // Oculta os campos após salvar
-          document.getElementById('imageInputContainer').style.display = 'none';
-          document.getElementById('imageFileInputContainer').style.display = 'none';
-        };
-        reader.readAsDataURL(file); // Converte imagem em base64
-      } else {
-        alert("Por favor, selecione uma imagem.");
-      }
-    }
-  
+
+function salvarImagemFundo() {
+  const fileInput = document.getElementById('imageFileInput');
+  const file = fileInput.files[0];
+
+  if (!file) {
+    alert("Por favor, selecione uma imagem.");
+    return;
+  }
+
+  const reader = new FileReader();
+
+  reader.onload = function (e) {
+    const img = new Image();
+    img.onload = function () {
+      // Define o tamanho máximo (ajuste conforme necessário)
+      const maxWidth = 800;
+      const scaleFactor = maxWidth / img.width;
+      const newWidth = maxWidth;
+      const newHeight = img.height * scaleFactor;
+
+      // Cria o canvas e desenha a imagem redimensionada
+      const canvas = document.createElement('canvas');
+      canvas.width = newWidth;
+      canvas.height = newHeight;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0, newWidth, newHeight);
+
+      // Converte para base64 (formato JPEG, qualidade 60%)
+      const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.6);
+
+      // Salva e aplica como plano de fundo
+      document.body.style.backgroundImage = `url('${compressedDataUrl}')`;
+      localStorage.setItem('appBackground', compressedDataUrl);
+
+      // Esconde campos após salvar
+      document.getElementById('imageInputContainer').style.display = 'none';
+      document.getElementById('imageFileInputContainer').style.display = 'none';
+    };
+
+    img.src = e.target.result;
+  };
+
+  reader.readAsDataURL(file);
+}
+
+    
+   
+         
+
+
+    
     function handleImageUpload() {
       salvarImagemFundo(); // Só chama salvar direto, tudo centralizado
     }
-
 
     <!-- 📌 função dupla- Perfil e imagem -frase dinâmica -->
 
