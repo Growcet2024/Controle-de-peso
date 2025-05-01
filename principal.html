@@ -38,8 +38,6 @@ html, body {
 }
 
 /* Conteiner principais */
-        
-  /* Conteiner principais */
 .container {
     width: 100%;
     max-width: 800px; /* Limita a largura máxima para que o conteúdo não fique esticado demais */
@@ -53,10 +51,6 @@ html, body {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
     min-height: 100vh; /* Garante que o contêiner preencha a altura total da tela */
 }
-
-
-
-  
 
 
 /* Botões principais registros */
@@ -295,7 +289,8 @@ button:hover {
 #userForm {
   border: 2px solid #ddd;
   padding: 20px;
-  margin-top: 5px;
+  margin-top: 5px;      /* 👈 margem superior adicionada */  
+  margin-bottom: 10px; /* 👈 margem inferior adicionada */
   border-radius: 10px;
   background-color: #ffffff;
 }
@@ -340,8 +335,8 @@ button:hover {
    
 #imageFileInputContainer {
   border: 2px solid #ddd;
-  padding: 20px;
-  margin-top: 10px;
+  padding: 10px;
+  margin-top: 0px;
   border-radius: 10px;
   background-color: #ffffff;
 }
@@ -514,17 +509,18 @@ button:hover {
   <div id="saveMessage" style="display: none; color: green; margin-top: 10px;">
     Perfil salvo com sucesso!
   </div>
-  
-  <!-- 🎨 BOTÕES imagem de tela -->
+
+
+  <!-- 🎨 BOTÕES imagem da tela -->
 <div id="imageInputContainer" style="display: none; margin-top: 10px;">
   <!-- Agora vazio, apenas controle visual -->
 </div>
 
 <!-- 🎯 Botão para abrir as opções -->
-<button onclick="openImageSettings()">Imagem tela da inicial</button>
+<button onclick="openImageSettings()">Imagem da tela</button>
 
 <!-- 📸 Campo escondido para selecionar imagem (galeria ou câmera) -->
-<div id="imageFileInputContainer" style="display: none; margin-top: 10px;">
+<div id="imageFileInputContainer" style="display: none; margin-top: 0px;">
     <input 
     type="file" 
     id="imageFileInput" 
@@ -553,7 +549,7 @@ button:hover {
     onclick="chooseAnotherImage()" 
     style="display: none; width: 300px; margin-left: 5px; margin-right: 5px;"
   >
-    Escolher outra imagem
+    Escolher outra
   </button>
 
   <!-- Botão "Salvar essa imagem" -->
@@ -562,10 +558,12 @@ button:hover {
     onclick="handleImageUpload()" 
     style="display: none; width: 300px; margin-left: 5px; margin-right: 5px;"
   >
-    Salvar essa imagem
+    Salvar essa
   </button>
 
 </div>
+
+
 
 <!-- 📸 Campo escondido para selecionar imagem (galeria ou câmera) -->
 <div id="imageFileInputContainer" style="display: none; margin-top: 10px;">
@@ -603,18 +601,11 @@ button:hover {
       alert("Por favor, selecione uma imagem.");
     }
   }
-
-  // Carrega a imagem salva ao abrir a página
-  window.onload = function() {
-    const savedBackground = localStorage.getItem('appBackground');
-    if (savedBackground) {
-      document.body.style.backgroundImage = `url('${savedBackground}')`;
-    }
-  };
+ // Carrega a imagem salva ao abrir a página = Duplicado
+ 
 </script>
 <!-- 🧠 Fim imamem de tela -->
-
-
+ 
 
 <script>
   // Função que alterna entre Perfil e Salvar
@@ -647,9 +638,6 @@ button:hover {
     document.getElementById('registerButton').style.display = 'none';
     document.getElementById('userForm').style.display = 'none'; // Formulário inicialmente oculto
   };
-
-
-
 
 </script>
 
@@ -886,6 +874,7 @@ function loadReportData() {
     reportContent.innerHTML += table;
 }
 
+// CSS = Relatório
 // CSS = Adicionando borda e organização visual ao relatório
 document.addEventListener("DOMContentLoaded", function() {
     var reportSection = document.getElementById("reportSection");
@@ -1456,38 +1445,20 @@ function editUser() {
 }
 
 
-  // Mantém os dados na tela ao recarregar a página
+<!-- 📌 Perfil frase dinâmica-->
+
+ // Mantém os dados na tela ao recarregar a página
 window.onload = function () {
   // Ajusta o tamanho da fonte do botão de histórico
   toggleHistoryButton.style.fontSize = "14px"; // Ajuste conforme necessário
 
-  // Verifica se existe perfil salvo
-  let userId = localStorage.getItem('userId');
-  let userName = localStorage.getItem('userName');
-  const tituloPerfil = document.querySelector('#userForm h3');
-  tituloPerfil.style.fontSize = "12px"; // ⬅️ Aqui ajusta o tamanho da fonte
 
-  if (userId && userName) {
-    document.getElementById('userInfo').innerText = `Usuário: ${userName} | ID: ${userId}`;
-    document.getElementById('userForm').style.display = 'none';
-    document.getElementById('registerButton').style.display = 'none';
-    document.getElementById('editButton').style.display = 'inline';
 
-    // Atualiza a mensagem do título dinamicamente
-    if (tituloPerfil) {
-      tituloPerfil.textContent = "Você pode editar seu perfil a qualquer momento.";
-    }
-  } else {
-    // Se não houver perfil salvo
-    if (tituloPerfil) {
-      tituloPerfil.textContent = "Vamos começar? Preencha seu perfil para iniciarmos sua jornada!";
-    }
-  }
+  <!-- 📌 Frase Salvo com sucesso  -->
 
   // Oculta a mensagem de sucesso de perfil salvo
   document.getElementById('saveMessage').style.display = 'none';
 };
-
 
         function saveUser() {
             userName = document.getElementById('userName').value.trim();
@@ -1683,8 +1654,6 @@ function addWeight() {
 }
 
 
-
-
  // 3º bloco
  function updateHistory() {
     let historyList = document.getElementById('historyList');
@@ -1805,17 +1774,50 @@ function deleteEntry(index) {
     function handleImageUpload() {
       salvarImagemFundo(); // Só chama salvar direto, tudo centralizado
     }
-  
-    // Aplica imagem salva automaticamente ao carregar a página
-    window.onload = function() {
-      const imagemSalva = localStorage.getItem('appBackground');
-      if (imagemSalva) {
-        document.body.style.backgroundImage = `url('${imagemSalva}')`;
-      }
-    };
 
 
-    <!-- 📌 img pré-visualização 2 -->
+    <!-- 📌 função dupla- Perfil e imagem -frase dinâmica -->
+
+    window.onload = function () {
+  // 🔁 Restaurar imagem de fundo salva
+  const imagemSalva = localStorage.getItem('appBackground');
+  if (imagemSalva) {
+    document.body.style.backgroundImage = `url('${imagemSalva}')`;
+  }
+
+  // 👤 Ajustar tamanho do botão de histórico (se existir)
+  const toggleHistoryButton = document.getElementById('toggleHistoryButton');
+  if (toggleHistoryButton) {
+    toggleHistoryButton.style.fontSize = "14px"; // Ajuste conforme necessário
+  }
+
+  // 👤 Verificar dados de perfil salvos
+  let userId = localStorage.getItem('userId');
+  let userName = localStorage.getItem('userName');
+  const tituloPerfil = document.querySelector('#userForm h3');
+
+  if (tituloPerfil) {
+    tituloPerfil.style.fontSize = "12px"; // Ajusta a fonte da frase
+  }
+
+  if (userId && userName) {
+    document.getElementById('userInfo').innerText = `Usuário: ${userName} | ID: ${userId}`;
+    document.getElementById('userForm').style.display = 'none';
+    document.getElementById('registerButton').style.display = 'none';
+    document.getElementById('editButton').style.display = 'inline';
+
+    if (tituloPerfil) {
+      tituloPerfil.textContent = "Você pode editar seu perfil a qualquer momento.";
+    }
+  } else {
+    if (tituloPerfil) {
+      tituloPerfil.textContent = "Vamos começar? Preencha seu perfil para iniciarmos sua jornada!";
+    }
+  }
+};
+
+
+    <!-- 📌 img pré-visualização -->
    
     function previewImage() {
   const fileInput = document.getElementById('imageFileInput');
