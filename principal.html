@@ -517,7 +517,7 @@ button:hover {
 </div>
 
 <!-- 🎯 Botão para abrir as opções -->
-<button onclick="openImageSettings()">Imagem da tela</button>
+<button id="toggleImageButton" onclick="openImageSettings()">Imagem da tela</button>
 
 <!-- 📸 Campo escondido para selecionar imagem (galeria ou câmera) -->
 <div id="imageFileInputContainer" style="display: none; margin-top: 0px;">
@@ -1743,12 +1743,27 @@ function deleteEntry(index) {
 <!-- 📌 IMAGEM PERFIL Abaixo -->
 
 <script>
-    function openImageSettings() {
-      document.getElementById('imageInputContainer').style.display = 'block';
-      document.getElementById('imageFileInputContainer').style.display = 'block'; // Mostra o seletor de arquivo
-    }
+    
+function openImageSettings() {
+  const imageInputContainer = document.getElementById('imageInputContainer');
+  const imageFileInputContainer = document.getElementById('imageFileInputContainer');
+  const button = document.getElementById('toggleImageButton'); // Botão "Imagem da tela"
 
-function salvarImagemFundo() {
+  // Verifica se o conteúdo está visível
+  if (imageInputContainer.style.display === 'block') {
+    // Se estiver visível, esconde
+    imageInputContainer.style.display = 'none';
+    imageFileInputContainer.style.display = 'none';
+    button.innerText = 'Imagem da tela'; // Altera o texto do botão
+  } else {
+    // Se não estiver visível, mostra
+    imageInputContainer.style.display = 'block';
+    imageFileInputContainer.style.display = 'block';
+    button.innerText = 'Fechar imagem da tela'; // Altera o texto do botão
+  }
+}
+
+    function salvarImagemFundo() {
   const fileInput = document.getElementById('imageFileInput');
   const file = fileInput.files[0];
 
@@ -1793,12 +1808,6 @@ function salvarImagemFundo() {
   reader.readAsDataURL(file);
 }
 
-    
-   
-         
-
-
-    
     function handleImageUpload() {
       salvarImagemFundo(); // Só chama salvar direto, tudo centralizado
     }
@@ -1868,7 +1877,7 @@ function salvarImagemFundo() {
       document.getElementById('saveImageButton').style.display = 'inline-block';
 
       // **Aqui está a alteração da frase**
-      document.getElementById('dynamicMessage').innerHTML= "Imagem carregada.<br>Você pode escolher outra ou salvar essa imagem.";
+      document.getElementById('dynamicMessage').innerText = "Imagem carregada. Você pode escolher outra ou salvar essa imagem.";
 
 // Ajustando o tamanho da fonte da frase dinamicamente
 document.getElementById('dynamicMessage').style.fontSize = "12px"; // Ajuste o valor conforme necessário
