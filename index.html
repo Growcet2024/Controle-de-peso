@@ -14,53 +14,52 @@ body {
   background-size: cover;
   background-position: center;
   height: 100vh;
-  position: relative;
+  display: flex;
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  align-items: flex-start; /* Ajusta o alinhamento vertical para começar um pouco mais no topo */
   text-align: center;
 }
 
 .conteudo {
-  position: absolute;
-  top: 25%; /* Aumente ou diminua esse valor conforme a altura desejada */
-  left: 50%;
-  transform: translateX(-50%);
   color: white;
-  text-shadow: 1px 1px 4px #000000;
+  text-shadow: 1px 1px 4px #000000; /* sombra preta sem transparência */
+  max-width: 80%; /* Controla a largura do conteúdo */
+  margin-top: 10%; /* Ajusta a distância do topo */
 }
 
+.titulo-app {
+  font-size: 35px;
+  margin-bottom: 5px; /* Distância menor entre título e subtítulo */
+}
 
-    .titulo-app {
-      font-size: 42px;
-      font-weight: bold;
-      margin-bottom: 0px;  // Titulo afasta
-    }
+h2 {
+  font-size: 25px;
+  margin-bottom: 20px; /* Espaço entre o subtítulo e o botão */
+}
 
-    h2 {
-      font-size: 24px;
-      margin-bottom: 5px;   // Subtitulo afasta
-    }
+.frase {
+  font-size: 16px;
+  font-style: italic;
+  margin-bottom: 50px; /* Frase afasta */
+  color: #f0f0f0;
+}
 
-    .frase {
-      font-size: 16px;
-      font-style: italic;
-      margin-bottom: 50px;  // Frase afasta
-      color: #f0f0f0;
-    }
+.btn-acessar {
+  padding: 12px 24px;
+  background: #007BFF;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
 
-    .btn-acessar {
-      padding: 12px 24px;
-      background: #007BFF;
-      border: none;
-      border-radius: 25px;
-      color: white;
-      font-size: 18px;
-      text-decoration: none;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
+.btn-acessar:hover {
+  background: #0056b3;
+}
 
-    .btn-acessar:hover {
-      background: #0056b3;
-    }
   </style>
 </head>
 <body>
