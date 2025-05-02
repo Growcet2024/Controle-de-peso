@@ -5,25 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vida Leve - Controle de Peso</title>
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background-image: url('https://i.postimg.cc/431JQpHm/Mundo-Natural-93.jpg'); /* URL padrão */
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
 
-    .conteudo {
-      color: white;
-      text-shadow: 1px 1px 4px #000000;
-      padding: 20px;
-    }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('https://i.postimg.cc/431JQpHm/Mundo-Natural-93.jpg'); /* URL padrão */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+  text-align: center;
+}
+
+.conteudo {
+  position: absolute;
+  top: 25%; /* Aumente ou diminua esse valor conforme a altura desejada */
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  text-shadow: 1px 1px 4px #000000;
+}
+
 
     .titulo-app {
       font-size: 42px;
@@ -77,4 +80,3 @@
   </script>
 </body>
 </html>
-
