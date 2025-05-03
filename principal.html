@@ -19,7 +19,7 @@
 
     <style>
 body {
-   font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
     background-color: #FFFFFF; /* fUNDO sob o fundo */
     margin: 0;
     padding: 0;
@@ -65,14 +65,14 @@ button {
 
 /* Estilizando os botões */
 button {
-    background-color: #007bff;
+    background-color: #8C9D8D;
     color: white;
     cursor: pointer;
     border: none;
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #B9C8B5;
 }
 
 #historyList {
@@ -335,6 +335,28 @@ button:hover {
   text-align: center;
 }
 
+
+/* 🎨 Imagem da tela padrão */
+.btn-resetar {
+  background: none;
+  border: none;
+  color: #ccc;
+  text-decoration: underline;
+  font-size: 13px;
+  cursor: pointer;
+  margin-top: 10px;
+  padding: 0;
+  opacity: 0.7;
+}
+
+.btn-resetar:hover {
+ 
+  opacity: 1;
+  text-decoration: underline;
+}
+
+
+
 </style>
     
 
@@ -529,6 +551,8 @@ button:hover {
 <!-- Container para os botões -->
 <div id="buttonContainer" style="display: none; justify-content: center; gap: 10px; margin-top: 10px; width: 100%;">
 
+
+
   <!-- Botão "Escolher outra imagem" -->
   <button 
     id="chooseAnotherButton" 
@@ -559,7 +583,12 @@ button:hover {
       onchange="previewImage()"  <!-- Chama a função de pré-visualização -->
     >
     <button onclick="handleImageUpload()">Salvar essa imagem</button>
+
   </div>
+
+<!-- 📸 Usar imagem padrão -->
+  <button onclick="resetarImagem()" class="btn-resetar">Usar imagem padrão</button>
+
 
 <!-- 🧠 Scripts -->
 <script>
@@ -592,6 +621,12 @@ button:hover {
  
 
 <script>
+
+function resetarImagem() {
+  localStorage.removeItem('appBackground');
+  location.reload(); // Recarrega a página para aplicar a imagem padrão
+}
+
 
   // Função que alterna entre Perfil e Salvar
   function toggleEdit() {
