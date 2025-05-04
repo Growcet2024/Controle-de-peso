@@ -37,7 +37,7 @@ html, body {
     height: 100%; /* Garantir que o html e body ocupem toda a altura */
 }
 
-/* Conteiner principais */
+/* Conteiner principais Texto Peso salso e imc*/
 .container {
     width: 100%;
     max-width: 800px; /* Limita a largura máxima para que o conteúdo não fique esticado demais */
@@ -48,16 +48,16 @@ html, body {
     overflow: hidden; /* Evita que o conteúdo ultrapasse o contêiner */
     background: #ffffff; /* Fundo branco */
     border-radius: 0px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
     min-height: 100vh; /* Garante que o contêiner preencha a altura total da tela */
 }
 
 /* Botões principais registros */
 input,
 button {
-    width: 80%; /* Garante que os inputs e botões ocupem 90% da largura do contêiner */
-    margin-bottom: 20px; /* Adiciona um pequeno espaçamento entre os campos */
-    padding: 14px;
+    width: 80%;
+    margin-bottom: 20px;
+    padding: 12px;
     border-radius: 20px;
     border: 1px solid #ccc;
     box-sizing: border-box;
@@ -65,14 +65,16 @@ button {
 
 /* Estilizando os botões */
 button {
-    background-color: #8C9D8D;
+    background-color: #C2D6C5;  /* Cor botões múltiplos */
     color: white;
     cursor: pointer;
     border: none;
+    text-shadow: 1px 1px 4px #000000; /* sombra no texto do botão */
+    font-size: 15px; /* Ajusta o tamanho da fonte do botão */
 }
 
 button:hover {
-    background-color: #B9C8B5;
+    background-color: #8C9D8D;  /* Cor hover */
 }
 
 #historyList {
@@ -98,7 +100,7 @@ button:hover {
 }
 
 #imcTable th {
-    background-color: #007bff;
+  background-color: #8C9D8D;  /* Cor da tabela IMC */
     color: white;
 }
 
@@ -112,16 +114,16 @@ button:hover {
 /* Estilo para resultado Peso e IMC */
 #resultDisplay {
   margin-top: 1px; /* Distância de 10px do elemento acima */
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
   color: #333; /* Cor escura para o texto */
 }
 
       /* Botão tabela IMC */
 #toggleButton {
-    background-color: #007bff;
+    background-color: #C2D6C5;  /* Cor do botão IMC */
     color: white;
-    padding: 14px;
+    padding: 12px;
     border: none;
     border-radius: 20px;
     cursor: pointer;
@@ -129,16 +131,16 @@ button:hover {
 }
 
 #toggleButton:hover {
-    background-color: #218838;
+    background-color: #8C9D8D;
 }
 
 /* Conteiner Histórico de Pesagem */
 /* Estilo do botão de Histórico de Pesagem */
 .historyButton {
-    padding: 13px 20px;
+    padding: 22px 20px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #4CAF50;
+    background-color: #1a9652;
     color: white;
     border: none;
     border-radius: 5px;
@@ -147,15 +149,14 @@ button:hover {
 }
 
 .historyButton:hover {
-    background-color: #45a049;
+    background-color: #2b9f0b;
 }
 
 /* Estilo do botão de Histórico de Pesagem */
 .historyButton {
-  padding: 13px 20px;
-  font-size: 16px;
+  padding: 12px 20px;
   cursor: pointer;
-  background-color: #007BFF; /* Azul elegante */
+  background-color: #C2D6C5; /* Cor botão historico de pesagem */
   color: white;
   border: none;
   border-radius: 20px; /* Bordas mais arredondadas */
@@ -163,10 +164,16 @@ button:hover {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+.historyButton {
+  font-size: 15px !important;
+}
+
 .historyButton:hover {
-  background-color: #218838; /* Azul mais escuro no hover */
+  background-color: #8C9D8D; /* Azul mais escuro no hover */ 
   transform: scale(1.03); /* Efeito leve de zoom no hover */
 }
+
+
 
 /* Estilo da lista de histórico */
 #historyList {
@@ -181,11 +188,6 @@ button:hover {
     border: 2px solid #ddd; /* Cor cinza clara, você pode trocar */
     border-radius: 10px;      /* Cantos arredondados */
     background-color: #ffffff; /* Fundo claro */
-}
-
-.historyButton:hover {
-  background-color: #007BFF;
-  color: white;
 }
 
   /* 🎨 CSS BARRA DE ROLAGEM - GRÁFICO */
@@ -241,7 +243,7 @@ button:hover {
 .menu-lateral {
     width: 250px;
     height: 100%;
-    background: linear-gradient(to right, #0357cd, #2196f3);
+    background: linear-gradient(to right, #C2D6C5, #8C9D8D);
     color: white;
     position: fixed;
     top: 0;
@@ -288,10 +290,11 @@ button:hover {
 /* Estilo do botão Perfil */
 #editButton {
   margin-top: 1px; /* Distância de 10px do elemento acima */
-  padding: 10px 20px; /* Adicionei um padding simples, pode ajustar como preferir */
-  font-size: 16px;
+  padding: 12px 20px; /* Adicionei um padding simples, pode ajustar como preferir */
+  font-size: 15px;
+  text-shadow: 1px 1px 4px #000000; /* sombra preta sem transparência */
   cursor: pointer;
-  background-color: #007BFF; /* Verde */
+  background-color: #C2D6C5; /* Cor botão perfil*/
   color: white;
   border: none;
   border-radius: 20px; /* Bordas arredondadas */
@@ -299,7 +302,7 @@ button:hover {
 }
 
 #editButton:hover {
-  background-color: #218838; /* Verde mais escuro no hover */
+  background-color: #8C9D8D; /* Verde mais escuro no hover */
 }
 
   /* CSS para centralizar o botão "Salvar" */
@@ -308,7 +311,10 @@ button:hover {
     margin: 10px auto; /* Centraliza o botão com um espaçamento de 20px */
     padding: 10px 20px; /* Adiciona espaçamento interno para o botão */
     font-size: 16px; /* Ajusta o tamanho da fonte do botão */
-    background-color: #007BFF; /* Cor de fundo do botão */
+
+    text-shadow: 1px 1px 4px #000000; /* sombra preta sem transparência não fonciona */
+
+    background-color: #B9C8B5; /* Cor de fundo do botão */
     color: white; /* Cor do texto */
     border: none; /* Remove bordas */
     border-radius: 20px; /* Bordas arredondadas */
@@ -316,8 +322,9 @@ button:hover {
   }
 
   #registerButton:hover {
-    background-color: #45a049; /* Muda a cor ao passar o mouse */
+    background-color: #B9C8B5; /* Muda a cor ao passar o mouse */
   }
+
 
 /* 🎨 IMAGEM DA TELA */
    
@@ -340,7 +347,7 @@ button:hover {
 .btn-resetar {
   background: none;
   border: none;
-  color: #ccc;
+  color: #ffffff;
   text-decoration: underline;
   font-size: 13px;
   cursor: pointer;
@@ -392,10 +399,11 @@ button:hover {
         <!-- Campo de data -->
         <input type="datetime-local" id="dateInput">
     
-        <button onclick="addWeight()">Adicionar Registro</button>
+        <button onclick="addWeight()">Adicionar registro</button>
     
         <!-- Botão para salvar a edição após edição de dados -->
-        <button onclick="saveEditedEntry()" style="width: 80%; padding: 14px; background-color: green; color: white; border: none; border-radius: 15px; cursor: pointer; margin-top: 10px;">
+        <button onclick="saveEditedEntry()" style="width: 80%; padding: 14px; background-color: #B9C8B5; color: white; border: none; border-radius: 15px; cursor: pointer; margin-top: 10px;">
+      
         Salvar Edição
         </button>
     
@@ -404,7 +412,7 @@ button:hover {
 
 
 <!-- Botão para exibir/esconder o Gráfico -->
-<button id="toggleGraphButton" onclick="toggleGraph()">Gráfico Evolutivo</button>
+<button id="toggleGraphButton" onclick="toggleGraph()">Gráfico evolutivo</button>
 
 <div id="graphSection" style="display: none;">
     <div id="graphContainer" style="background: white; padding: 10px; min-width: 400px;">
@@ -412,7 +420,7 @@ button:hover {
 
 
       <div style="margin-top: 10px; text-align: left; font-size: 10px; color: #333;">
-        <div>Aplicativo controle de peso</div>
+        <div>Vida leve - Controle de peso</div>
         <div id="nomeInfo"></div>
         <div id="dataGerada"></div>
         <div id="motivationalPhrase" style="margin-top: 4px; font-weight: bold;"></div>
@@ -434,7 +442,7 @@ button:hover {
   </div>
   
 <!-- Botão para exibir/esconder o Gerar relatório -->
-<button id="toggleReportButton" onclick="toggleReport()">Gerar Relatório</button>
+<button id="toggleReportButton" onclick="toggleReport()">Gerar relatório</button>
 
 <div id="reportSection" style="display: none;">
   <div id="reportContent"></div> <!-- histórico -->
@@ -447,7 +455,7 @@ button:hover {
 
 
         <!-- Botão IMC -->
-<button id="toggleButton" onclick="toggleTable()">Mostrar Tabela IMC</button>
+<button id="toggleButton" onclick="toggleTable()">Mostrar tabela imc</button>
 
 <!-- Tabela IMC -->
 <table id="imcTable" style="width: 100%; margin-top: 1px; margin-bottom: 10px; border-collapse: collapse; text-align: left; display: none;">
@@ -490,7 +498,7 @@ button:hover {
 
 <!-- Botão para exibir/esconder o Histórico -->
 <button id="toggleHistoryButton" onclick="toggleHistory()" class="historyButton">
-    Histórico de Pesagem
+    Histórico de Ppesagem
   </button>
   
   <!-- Seção do Histórico -->
@@ -705,7 +713,7 @@ function toggleReport() {
         let { userId, userName, desiredWeight, history } = extractUserData();
 
         // Inicia o conteúdo com os dados do usuário
-        let content = `<h3>Aplicativo controle de peso</h3>`;
+        let content = `<h3>Vida leve - Controle de peso</h3>`;
         content += `<p><strong>Nome:</strong> ${userName} | <strong>ID:</strong> ${userId} <br> <strong>Peso Desejado:</strong> ${desiredWeight} kg</p>`;
 
         // Tabela de Histórico de Pesagem
@@ -1033,6 +1041,8 @@ function generatePDF() {
 
 <!-- BLOCO 3 -->
 
+
+
 // BLOCO 3 - Gráfico em Barras Verticais
 function updateChart() {
     let { labels, weights, imcValues } = getWeightData();
@@ -1154,6 +1164,7 @@ function atualizarDataGerada() {
 }
 
 // Função para preencher as informações do usuário
+
 function preencherNomeInfo() {
     const userName = localStorage.getItem("userName") || "Usuário";
     const userId = localStorage.getItem("userId") || "ID-desconhecido";
@@ -1202,6 +1213,8 @@ function atualizarFraseMotivacional() {
   document.getElementById("registroCount").textContent = `Total de registros: ${labels.length}`;
 }
 
+
+
 <!-- BLOCO 5 --> – Função para Baixar PDF
 
   async function downloadPDF() {
@@ -1226,9 +1239,12 @@ function atualizarFraseMotivacional() {
     const imgWidth = pageWidth - 80;  // Margem horizontal
     const imgHeight = (canvas.height / canvas.width) * imgWidth;
 
-    // Título
+// Título
     doc.setFontSize(14);
-    doc.text("Gráfico de Peso e IMC", 40, 40);
+    doc.setFont("helvetica", "bold");
+    doc.text("Vida leve - Controle de peso", 40, 60);
+    doc.setFont("helvetica", "normal");
+    doc.text("Gráfico de Peso e IMC", 40, 75)
 
     // Dados de identificação (puxados corretamente)
     const userName = localStorage.getItem('userName') || "Usuário";
@@ -1238,14 +1254,14 @@ function atualizarFraseMotivacional() {
     const fraseMotivacional = document.getElementById("motivationalPhrase").innerText;
 
     doc.setFontSize(10);
-    doc.text(`Nome: ${userName} | ID: ${userId} | Peso Desejado: ${pesoDesejado} kg`, 40, 60);
-    doc.text(dataGerada, 40, 75);
+    doc.text(`Nome: ${userName} | ID: ${userId} | Peso Desejado: ${pesoDesejado} kg`, 40, 95);
+    doc.text(dataGerada, 40, 110);
     doc.setFont(undefined, "bold");
-    doc.text(fraseMotivacional, 40, 90);
+    doc.text(fraseMotivacional, 40, 125);
     doc.setFont(undefined, "normal");
 
     // 👇 Adiciona o total de registros
-    doc.text(`Total de registros: ${labels.length}`, 40, 105); // <- essa linha é nova!
+    doc.text(`Total de registros: ${labels.length}`, 40, 140); // <- essa linha é nova!
 
     // Adiciona imagem do gráfico
     doc.addImage(chartImage, "PNG", 40, 120, imgWidth, imgHeight);
@@ -1313,10 +1329,10 @@ function atualizarFraseMotivacional() {
             // Verifica se o histórico está visível ou não
             if (historySection.style.display === "none") {
                 historySection.style.display = "block";  // Exibe o histórico
-                this.textContent = "Fechar Histórico de Pesagem";  // Altera o texto do botão
+                this.textContent = "Fechar Histórico de pesagem";  // Altera o texto do botão
             } else {
                 historySection.style.display = "none";  // Oculta o histórico
-                this.textContent = "Histórico de Pesagem";  // Restaura o texto do botão
+                this.textContent = "Histórico de pesagem";  // Restaura o texto do botão
             }
         });
     });
@@ -1684,10 +1700,10 @@ function addWeight() {
             </div>
             
 <div style="margin-top: 8px; display: flex; gap: 10px;">
-    <button onclick="editEntry(${index})" style="flex: 1; padding: 10px; background-color: orange; color: white; border: none; border-radius: 15px; cursor: pointer;">
+    <button onclick="editEntry(${index})" style="flex: 1; padding: 10px; background-color: #C2D6C5; color: white; border: none; border-radius: 15px; cursor: pointer;">
         Editar
     </button>
-    <button onclick="confirmDelete(${index})" style="flex: 1; padding: 10px; background-color: red; color: white; border: none; border-radius: 15px; cursor: pointer;">
+    <button onclick="confirmDelete(${index})" style="flex: 1; padding: 10px; background-color: #C2D6C5; color: white; border: none; border-radius: 15px; cursor: pointer;">
         Apagar
     </button>
 </div>
