@@ -59,7 +59,7 @@ button {
     margin-bottom: 20px;
     padding: 12px;
     border-radius: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #02779e; /* Campo peso atual */
     box-sizing: border-box;
    
 }
@@ -113,7 +113,7 @@ button:hover {
 #imcTable th,
 #imcTable td {
     padding: 14px;
-    border: 1px solid #ddd;  /* Cor da borda IMC */
+    border: 1px solid #ee5c5c;  /* Cor da borda IMC */
     text-align: left;
 }
 
@@ -134,7 +134,7 @@ button:hover {
   margin-top: 1px; /* Distância de 10px do elemento acima */
   font-size: 15px;
   font-weight: bold;
-  color: #333; /* Cor escura para o texto */
+  color: #7f8c8d; /* Cor escura para o texto peso e imc */
 }
 
   /* Botão tabela IMC */
@@ -231,7 +231,7 @@ button::before {
   list-style-type: none;
 
   /* 👇 Aqui está a borda */
-  border: 2px solid #ddd;       /* Cor cinza clara */
+  border: 1px solid #0393bb;   /* Cor borda lista */
   border-radius: 10px;          /* Cantos arredondados */
   background-color: #ffffff;    /* Fundo claro */
 }
@@ -261,8 +261,9 @@ button::before {
   background: #FF8C00; /* Laranja mais escuro no hover */
 }
 
+
 #graphSection {
-  border: 2px solid #ddd;   /* Cor da borda Gráfico */
+  border: 1px solid #02779e;   /* Cor da borda Gráfico */
   border-radius: 10px;       /* Cantos arredondados, opcional */
   padding: 10px;             /* Espaço interno para a borda não colar no gráfico */
   margin-bottom: 20px;       /* Espaço abaixo do gráfico */
@@ -278,7 +279,7 @@ button::before {
     top: 20px;
     right: 20px;
     z-index: 101;
-    color: #000000;
+    color: #7f8c8d ;
     background: white;
     border-radius: 5px;
     padding: 5px 10px;
@@ -325,7 +326,7 @@ button::before {
 
 /* 🎨 CSS PERFIL */
 #userForm {
-  border: 2px solid #ddd;
+  border: 1px solid #02779e;
   padding: 20px;
   margin-top: 5px;      /* 👈 margem superior adicionada */  
   margin-bottom: 10px; /* 👈 margem inferior adicionada */
@@ -389,7 +390,7 @@ button::before {
 /* 🎨 IMAGEM DA TELA */
    
 #imageFileInputContainer {
-  border: 2px solid #ddd;
+  border: 1px solid #0393bb;
   padding: 10px;
   margin-top: 0px;
   border-radius: 10px;
@@ -438,11 +439,11 @@ button::before {
 </div>
 
     <div class="container">
-        <h2>Controle de Peso</h2>
-    
+      <h2 style="color: #2c3e50;">Controle de Peso</h2> <!-- cor título -->
+
         <!-- Exibe o nome e ID após cadastro -->
-        <p id="userInfo" style="font-weight: bold;"></p>
-    
+        <p id="userInfo" style="font-weight: bold; color: #7f8c8d ;">Aqui vai o subtítulo</p>
+
         <!-- Campo nome e ID -->
         <p id="userNameDisplay"></p>
     
@@ -579,7 +580,7 @@ button::before {
   <input type="text" id="userName" placeholder="Digite seu nome">
   <input type="number" id="height" placeholder="Digite sua altura">
   <input type="number" id="desiredWeight" placeholder="Digite seu peso desejado">
-  <h6 style="margin-top: 1px;">Aplicativo controle de peso</h6>
+  <h6 style="margin-top: 1px;">Vida leve</h6>
 </div>
 
   <div id="saveMessage" style="display: none; color: green; margin-top: 10px;">
@@ -961,7 +962,7 @@ function loadReportData() {
 // CSS = Adicionando borda e organização visual ao relatório
 document.addEventListener("DOMContentLoaded", function() {
     var reportSection = document.getElementById("reportSection");
-    reportSection.style.border = "1px solid #ddd"; // cor da borta Relatório
+    reportSection.style.border = "1px solid #02779e"; // cor da borta Relatório
     reportSection.style.padding = "10px";
     reportSection.style.marginTop = "1px";
     reportSection.style.marginBottom = "10px";
