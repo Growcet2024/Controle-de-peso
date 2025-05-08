@@ -236,6 +236,14 @@ button::before {
   background-color: #ffffff;    /* Fundo claro */
 }
 
+/* Ajuste fonte e cor titulos em lista de historico */
+        #historyList strong {
+    font-size: 14px;    /* Ajuste o tamanho da fonte */
+    color: #2c3e50;     /* Defina a cor do título */
+    font-weight: bold;  /* Deixa o título em negrito */
+}
+
+
   /* 🎨 CSS BARRA DE ROLAGEM - GRÁFICO */
 #graphSection {
   margin-bottom: 20px;              /* Espaço abaixo do gráfico */
@@ -442,12 +450,12 @@ button::before {
       <h2 style="color: #2c3e50;">Controle de Peso</h2> <!-- cor título -->
 
         <!-- Exibe o nome e ID após cadastro -->
-        <p id="userInfo" style="font-weight: bold; color: #7f8c8d ;"></p>
+        <p id="userInfo" style="font-weight: bold; color: #7f8c8d ;"></p><!-- Sub cor título -->
 
         <!-- Campo nome e ID -->
         <p id="userNameDisplay"></p>
     
-        <p id="userInfo" style="font-weight: bold; font-size: 16px; margin-bottom: 5px;"></p> <!-- Sub cor título -->
+        <p id="userInfo" style="font-weight: bold; font-size: 16px; margin-bottom: 5px;"></p>
     
         <p id="userId" style="display: none;"></p>
     
@@ -480,20 +488,20 @@ button::before {
       <canvas id="weightChart" width="600"></canvas>
 
 
-      <div style="margin-top: 10px; text-align: left; font-size: 10px; color: #333;">
+      <div style="margin-top: 10px; text-align: left; font-size: 10px; color: #2c3e50;">
         <div>Vida leve - Controle de peso</div>
         <div id="nomeInfo"></div>
         <div id="dataGerada"></div>
         <div id="motivationalPhrase" style="margin-top: 4px; font-weight: bold;"></div>
       </div>
-      <p id="registroCount" style="margin-top: 5px; font-size: 13px; color: #444; text-align: left;"></p>
+      <p id="registroCount" style="margin-top: 5px; font-size: 13px; color: #2c3e50; text-align: left;"></p>
 
 
 <!-- Botão + Frase, tudo dentro do graphContainer -->
     <div style="margin-top: 8px; margin-bottom: 10px; text-align: left; padding-left: 12px;">
       <button onclick="downloadPDF()" style="width: 255px;">Baixar Gráfico</button>
 
-        <div style="font-size: 12px; color: #555; margin-top: 4px;">
+        <div style="font-size: 12px; color: #2c3e50; margin-top: 4px;">
             Após abrir o PDF, toque nos três pontinhos e escolha <br>
             compartilhar no WhatsApp, imprimir ou salvar novamente.
           </div>
@@ -509,7 +517,7 @@ button::before {
   <div id="reportContent"></div> <!-- histórico -->
 
   <!-- Frase final com tamanho menor e fora do graphContainer -->
-  <div style="font-size: 12px; color: #555; margin-top: 6px; padding: 0 10px;">
+  <div style="font-size: 12px; color: #2c3e50; margin-top: 6px; padding: 0 10px;">
     Após abrir o PDF, toque nos três pontinhos e escolha compartilhar no WhatsApp, imprimir ou salvar novamente.
   </div>
 </div>
@@ -620,8 +628,6 @@ button::before {
 <!-- Container para os botões -->
 <div id="buttonContainer" style="display: none; justify-content: center; gap: 10px; margin-top: 10px; width: 100%;">
 
-
-
   <!-- Botão "Escolher outra imagem" -->
   <button 
     id="chooseAnotherButton" 
@@ -696,7 +702,6 @@ function resetarImagem() {
   location.reload(); // Recarrega a página para aplicar a imagem padrão
 }
 
-
   // Função que alterna entre Perfil e Salvar
   function toggleEdit() {
     // Esconder o botão "Perfil" e mostrar o botão "Salvar"
@@ -758,6 +763,11 @@ extractUserData();
 </script>
 
 
+
+
+
+
+
 <!-- RELATORIO - INICIO-->                        
 <script>
 <!-------------------------------- BLOCO GERAR RELATORIO ----------------->
@@ -773,18 +783,30 @@ function toggleReport() {
 
         let { userId, userName, desiredWeight, history } = extractUserData();
 
+
+        
         // Inicia o conteúdo com os dados do usuário
-        let content = `<h3>Vida leve - Controle de peso</h3>`;
-        content += `<p><strong>Nome:</strong> ${userName} | <strong>ID:</strong> ${userId} <br> <strong>Peso Desejado:</strong> ${desiredWeight} kg</p>`;
+let content = `
+  <h3 style="color: #2c3e50; font-size: 15px; margin-bottom: 10px;">Vida leve - Controle de peso</h3>
+  <p style="font-size: 13px; color: ##7f8c8d;">
+    <strong>Nome:</strong> ${userName} | <strong>ID:</strong> ${userId}<br>
+    <strong>Peso Desejado:</strong> ${desiredWeight} kg
+  </p>
+`;
 
         // Tabela de Histórico de Pesagem
         content += `<table style="width: 100%; border-collapse: collapse; text-align: left; margin-left: 0px; margin-right: 15px;">
-         <tr>
-         <th style="border: 1px solid #ccc; padding: 2px; font-size: 15px;">Data:</th>
-         <th style="border: 1px solid #ccc; padding: 2px; font-size: 15px;">Peso Atual</th>
-         <th style="border: 1px solid #ccc; padding: 2px; font-size: 15px;">Peso Saldo</th>
-         <th style="border: 1px solid #ccc; padding: 2px; font-size: 15px;">IMC</th>
+         
+         
+
+
+  <tr>
+         <th style="border: 1px solid #7f8c8d; padding: 2px; font-size: 13px;color: #2c3e50 ;">Data:</th>
+         <th style="border: 1px solid #7f8c8d; padding: 2px; font-size: 13px;color: #2c3e50 ;">Peso Atual</th>
+         <th style="border: 1px solid #7f8c8d; padding: 2px; font-size: 13px;color: #2c3e50 ;">Peso Saldo</th>
+         <th style="border: 1px solid #7f8c8d; padding: 2px; font-size: 13px;color: #2c3e50 ;">IMC</th>
          </tr>`;
+
 
     // Data dia, mês, ano
    history.forEach(entry => {
@@ -802,27 +824,37 @@ function toggleReport() {
 
     // Adicionar a data formatada na tabela
     content += `<tr>
-        <td style="border: 1px solid #ccc; padding: 6px; font-size: 14px;">${formattedDate}</td>
-        <td style="border: 1px solid #ccc; padding: 6px; font-size: 14px;">${entry.currentWeight} kg</td>
-        <td style="border: 1px solid #ccc; padding: 6px; font-size: 14px;">${entry.balanceSign} kg</td>
-        <td style="border: 1px solid #ccc; padding: 6px; font-size: 14px;">${entry.imc}</td>
+        <td style="border: 1px solid #7f8c8d; padding: 6px; font-size: 14px;">${formattedDate}</td>
+        <td style="border: 1px solid #7f8c8d; padding: 6px; font-size: 14px;">${entry.currentWeight} kg</td>
+        <td style="border: 1px solid #7f8c8d; padding: 6px; font-size: 14px;">${entry.balanceSign} kg</td>
+        <td style="border: 1px solid #7f8c8d; padding: 6px; font-size: 14px;">${entry.imc}</td>
     </tr>`;
 });
-
-        // Adiciona data e hora do relatório gerado
-        content += `<p><strong>Relatório gerado em:<br></strong> ${new Date().toLocaleString()}</p>`;
+  
+// Adiciona data e hora do relatório gerado
+content += `<p><strong><p style="font-size: 13px; color: #7f8c8d;">Relatório gerado em:<br></strong> ${new Date().toLocaleString()}</p>`;
         content += `</table>`;
+        
 
+
+        
         // Unificando as frases: Contagem de registros e diferença de peso
 
         let firstWeight = parseFloat(history[0].currentWeight); // Peso inicial (primeiro registro)
         let lastWeight = parseFloat(history[history.length - 1].currentWeight); // Peso final (último registro)
 
-        
-
       // Calculando a diferença de peso rever isso
       let weightDifference = lastWeight - firstWeight;
       let weightChangeMessage = "";
+
+
+
+
+
+
+
+
+
 
 // Verifica se o peso aumentou ou diminuiu
 if (weightDifference > 0) {
@@ -847,7 +879,7 @@ if (weightDifference > 0) {
 
 // Unificando as frases: Contagem de registros e diferença de peso
 
-content += `<p style="text-align: center; margin-top: 10px; font-size: 12px; color: #333;">
+content += `<p style="text-align: center; margin-top: 10px; font-size: 12px; color: #2c3e50 ;">
   Aqui tem ${history.length} registros, ${weightChangeMessage}</p>`;
 
 // FRASE MOTIVACIONAL
@@ -902,7 +934,7 @@ if (history.length > 0) {
     else if (firstWeight < desiredWeight) {
         let missingWeight = desiredWeight - firstWeight; // Peso que falta para o objetivo
 
-        motivationalMessage = `<p style='text-align: center; font-size: 12px; color: red;'>Faltam ${missingWeight.toFixed(2)} kg para você atingir ${desiredWeight} kg. Alimente-se bem para alcançar sua meta com saúde!</p>`;
+        motivationalMessage = `<p style='text-align: center; font-size: 12px; color: orange;'>Faltam ${missingWeight.toFixed(2)} kg para você atingir ${desiredWeight} kg. Alimente-se bem para alcançar sua meta com saúde!</p>`;
     }
 
     // Exibe a frase motivacional
@@ -1032,6 +1064,8 @@ function displayReport() {
     reportContainer.textContent = reportContent; // Exibe o relatório na tela
     reportContainer.style.whiteSpace = "pre-line"; // Mantém a formatação de quebras de linha
 }
+
+
 </script>
 
 <!-- BLOCO 06 - Função baixar PDF -->
@@ -1059,6 +1093,31 @@ function generatePDF() {
     buttons.forEach(button => button.style.display = "inline-block");
 }
  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 <!-- GRAFICO EVOLUTIVO -->
 
@@ -1726,7 +1785,7 @@ function addWeight() {
     console.log("Chamando updateChart() após adicionar peso.");
 }
 
- // 3º bloco
+ // 3º bloco lista historico de pesagem
  function updateHistory() {
     let historyList = document.getElementById('historyList');
 
@@ -1735,7 +1794,7 @@ function addWeight() {
 
         let listItem = document.createElement('div');
 
-        listItem.style.borderBottom = "1px solid #ccc";
+        listItem.style.borderBottom = "1px solid #2c3e50 ";
         listItem.style.padding = "15px";
         listItem.style.marginBottom = "10px";
         listItem.style.backgroundColor = "#f9f9f9"; // Fundo levemente cinza para diferenciar os itens
@@ -1744,21 +1803,22 @@ function addWeight() {
         listItem.style.marginRight = "18px"; // Centraliza à direita
 
         listItem.innerHTML = `
-            <div style="font-size: 16px; font-weight: bold; color: #333;">
+            <div style="font-size: 14px; font-weight: bold; color: #2c3e50;"> 
                 ${entry.timestamp}
             </div>
             <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+
                 <div>
                     <strong>Peso Atual:</strong><br>
-                    <span>${entry.currentWeight} kg</span>
+                   <span style="font-size: 14px; color: #7f8c8d ;">${entry.currentWeight} kg</span>
                 </div>
                 <div>
                     <strong>Peso Saldo:</strong><br>
-                    <span>${entry.balanceSign} kg</span> <!-- Aqui mostramos o Peso Saldo -->
+                    <span style="font-size: 14px; color: #7f8c8d ;">${entry.balanceSign} kg</span>
                 </div>
                 <div>
                     <strong>IMC:</strong><br>
-                    <span>${entry.imc}</span> <!-- Aqui mostramos o IMC -->
+                    <span style="font-size: 14px; color: #7f8c8d ;">${entry.imc}</span>
                 </div>
             </div>
             
