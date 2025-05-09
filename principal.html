@@ -46,7 +46,7 @@ html, body {
     box-sizing: border-box;
     text-align: center; /* Centraliza o conteúdo */
     overflow: hidden; /* Evita que o conteúdo ultrapasse o contêiner */
-    background: #ffffff; /* Fundo branco */
+    background: #f0f4f8; /* Fundo branco */
     border-radius: 0px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
     min-height: 100vh; /* Garante que o contêiner preencha a altura total da tela */
@@ -57,7 +57,7 @@ input,
 button {
     width: 80%;
     margin-bottom: 20px;
-    padding: 14px;
+    padding: 13px;
     border-radius: 20px;
     border: 1px solid #02779e; /* Campo peso atual */
     box-sizing: border-box;
@@ -70,8 +70,8 @@ button {
     background: linear-gradient(to bottom, #02779e, #02779e);  /* Gradiente sutil para profundidade */
     color: white;
     cursor: pointer;
-    border: 1.5px solid #6a87cf; /* Borda fina e definida */
-    font-size: 14px;
+    border: 1.5px solid #ffffff; /* Borda fina e definida no botão*/
+    font-size: 15px; /* Tamanho fonte 4 botão*/
     border-radius: 20px;          /* Para arredondar e combinar com o brilho */
     position: relative;          /* Necessário para o ::before */
     overflow: hidden;            /* Garante que o brilho não vaze */
@@ -118,7 +118,7 @@ button:hover {
 }
 
 #imcTable th {
-  background-color: #0393bb;  /* Cor da tabela IMC */
+  background-color: #02779e  ;  /* Cor da tabela IMC */
     color: white;
 }
 
@@ -142,12 +142,13 @@ button:hover {
 #toggleButton {
     background: linear-gradient(to bottom, #02779e, #02779e);  /* Gradiente sutil para profundidade */
     color: white;
-    padding: 13px;
+    padding: 14px;
+    font-size: 15px; /* Tamanho fonte botão imc*/
     border: none;
     border-radius: 20px;
     cursor: pointer;
     margin-top: 1px;
-    border: 1.5px solid #20d9e4; /* Borda fina e definida */
+    border: 1.5px solid #E2725B; /* Borda fina e definida botão imc*/
 }
 
 /* Brilho plástico por cima */
@@ -190,7 +191,7 @@ button::before {
 /* Estilo do botão de Histórico de Pesagem */
 .historyButton {
   padding: 14px 20px;
-  font-size: 14px !important;
+  font-size: 15px !important; /* Tamanho fonte botão historico*/
   cursor: pointer;
   background: linear-gradient(to bottom, #02779e, #02779e);  /* Gradiente sutil para profundidade */
   color: white;
@@ -198,7 +199,7 @@ button::before {
   border-radius: 20px; /* Bordas mais arredondadas */
   margin-top: 1px;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  border: 1.5px solid #20d9e4; /* Borda fina e definida */
+  border: 1.5px solid #E2725B; /* Borda fina e definida botão historico*/
 }
 
 /* Brilho plástico por cima */
@@ -347,14 +348,14 @@ button::before {
 #editButton {
   margin-top: 1px; /* Distância de 10px do elemento acima */
   padding: 13px 20px; /* Adicionei um padding simples, pode ajustar como preferir */
-  font-size: 13px;
+  font-size: 15px; /* Tamanho fonte botão perfil*/
   cursor: pointer;
   background: linear-gradient(to bottom, #02779e, #02779e);  /* Gradiente sutil para profundidade */
   color: white;
   border: none;
   border-radius: 20px; /* Bordas arredondadas */
   transition: background-color 0.3s ease, transform 0.2s ease;
-  border: 1.5px solid #20d9e4; /* Borda fina e definida */
+  border: 1.5px solid  #E2725B; /* Borda fina e definida botão perfil*/
 }
 
 /* Brilho plástico por cima */
