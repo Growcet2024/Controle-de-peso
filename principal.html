@@ -57,7 +57,7 @@ input,
 button {
     width: 80%;
     margin-bottom: 20px;
-    padding: 12px;
+    padding: 13px;
     border-radius: 20px;
     border: 1px solid #02779e; /* Campo peso atual */
     box-sizing: border-box;
@@ -70,8 +70,8 @@ button {
     background: linear-gradient(to bottom, #02779e, #02779e);  /* Gradiente sutil para profundidade */
     color: white;
     cursor: pointer;
-    border: 1.5px solid #20d9e4; /* Borda fina e definida */
-    font-size: 12px;
+    border: 1.5px solid #6a87cf; /* Borda fina e definida */
+    font-size: 13px;
     border-radius: 20px;          /* Para arredondar e combinar com o brilho */
     position: relative;          /* Necessário para o ::before */
     overflow: hidden;            /* Garante que o brilho não vaze */
@@ -142,7 +142,7 @@ button:hover {
 #toggleButton {
     background: linear-gradient(to bottom, #02779e, #02779e);  /* Gradiente sutil para profundidade */
     color: white;
-    padding: 12px;
+    padding: 13px;
     border: none;
     border-radius: 20px;
     cursor: pointer;
@@ -189,8 +189,8 @@ button::before {
 /* Estilizando os botões com efeito glossy = Histórico*/
 /* Estilo do botão de Histórico de Pesagem */
 .historyButton {
-  padding: 12px 20px;
-  font-size: 12px !important;
+  padding: 13px 20px;
+  font-size: 13px !important;
   cursor: pointer;
   background: linear-gradient(to bottom, #02779e, #02779e);  /* Gradiente sutil para profundidade */
   color: white;
@@ -236,9 +236,9 @@ button::before {
   background-color: #ffffff;    /* Fundo claro */
 }
 
-/* Ajuste fonte e cor titulos em lista de historico */
+  /*  👇 Ajuste fonte e cor titulos em lista de historico */
         #historyList strong {
-    font-size: 14px;    /* Ajuste o tamanho da fonte */
+    font-size: 13px;    /* Ajuste o tamanho da fonte */
     color: #2c3e50;     /* Defina a cor do título */
     font-weight: bold;  /* Deixa o título em negrito */
 }
@@ -346,8 +346,8 @@ button::before {
 /* Estilo do botão Perfil */
 #editButton {
   margin-top: 1px; /* Distância de 10px do elemento acima */
-  padding: 12px 20px; /* Adicionei um padding simples, pode ajustar como preferir */
-  font-size: 12px;
+  padding: 13px 20px; /* Adicionei um padding simples, pode ajustar como preferir */
+  font-size: 13px;
   cursor: pointer;
   background: linear-gradient(to bottom, #02779e, #02779e);  /* Gradiente sutil para profundidade */
   color: white;
@@ -416,7 +416,7 @@ button::before {
 .btn-resetar {
   background: none;
   border: none;
-  color: #ddd;
+  color: #b5b0b0; /* Cor Usar imagem padrão*/
   text-decoration: underline;
   font-size: 13px;
   cursor: pointer;
@@ -487,9 +487,9 @@ button::before {
     <div id="graphContainer" style="background: white; padding: 10px; min-width: 400px;">
       <canvas id="weightChart" width="600"></canvas>
 
-
       <div style="margin-top: 10px; text-align: left; font-size: 11px; color: #2c3e50;">
         <div>Vida leve - Controle de peso</div>
+
         <div id="nomeInfo"></div>
         <div id="dataGerada"></div>
         <div id="motivationalPhrase" style="margin-top: 4px; font-weight: bold;"></div>
@@ -588,10 +588,10 @@ button::before {
   <input type="text" id="userName" placeholder="Digite seu nome">
   <input type="number" id="height" placeholder="Digite sua altura">
   <input type="number" id="desiredWeight" placeholder="Digite seu peso desejado">
-  <h6 style="margin-top: 1px;">Vida leve</h6>
+  <h6 style="margin-top: 1px;color: #7f8c8d ; ">Vida leve</h6>
 </div>
 
-  <div id="saveMessage" style="display: none; color: green; margin-top: 10px;">
+  <div id="saveMessage" style="display: none; color: #008000; margin-top: 10px;">
     Perfil salvo com sucesso!
   </div>
 
@@ -621,7 +621,7 @@ button::before {
 </div>
 
  <!-- Container para a frase dinâmica -->
- <p id="dynamicMessage" style="text-align: center; width: 100%; font-size: 12px; margin-bottom: 20px;">
+ <p id="dynamicMessage" style="text-align: center; width: 100%; font-size: 12px;color: #2c3e50 ;  margin-bottom: 20px;">
   Escolha uma imagem da galeria ou câmera para a tela.
 </p>
 
@@ -762,12 +762,6 @@ extractUserData();
 // ========================== BLOCO DE EXTRAÇÃO DOS DADOS fim ==========================
 </script>
 
-
-
-
-
-
-
 <!-- RELATORIO - INICIO-->                        
 <script>
 <!-------------------------------- BLOCO GERAR RELATORIO ----------------->
@@ -783,8 +777,6 @@ function toggleReport() {
 
         let { userId, userName, desiredWeight, history } = extractUserData();
 
-
-        
         // Inicia o conteúdo com os dados do usuário
 let content = `
   <h3 style="color: #2c3e50; font-size: 15px; margin-bottom: 10px;">Vida leve - Controle de peso</h3>
@@ -793,20 +785,15 @@ let content = `
     <strong>Peso Desejado:</strong> ${desiredWeight} kg
   </p>
 `;
-
         // Tabela de Histórico de Pesagem
         content += `<table style="width: 100%; border-collapse: collapse; text-align: left; margin-left: 0px; margin-right: 15px;">
          
-         
-
-
   <tr>
          <th style="border: 1px solid #7f8c8d; padding: 2px; font-size: 13px;color: #2c3e50 ;">Data:</th>
          <th style="border: 1px solid #7f8c8d; padding: 2px; font-size: 13px;color: #2c3e50 ;">Peso Atual</th>
          <th style="border: 1px solid #7f8c8d; padding: 2px; font-size: 13px;color: #2c3e50 ;">Peso Saldo</th>
          <th style="border: 1px solid #7f8c8d; padding: 2px; font-size: 13px;color: #2c3e50 ;">IMC</th>
          </tr>`;
-
 
     // Data dia, mês, ano
    history.forEach(entry => {
@@ -835,9 +822,6 @@ let content = `
 content += `<p><strong><p style="font-size: 13px; color: #7f8c8d;">Relatório gerado em:<br></strong> ${new Date().toLocaleString()}</p>`;
         content += `</table>`;
         
-
-
-        
         // Unificando as frases: Contagem de registros e diferença de peso
 
         let firstWeight = parseFloat(history[0].currentWeight); // Peso inicial (primeiro registro)
@@ -846,15 +830,6 @@ content += `<p><strong><p style="font-size: 13px; color: #7f8c8d;">Relatório ge
       // Calculando a diferença de peso rever isso
       let weightDifference = lastWeight - firstWeight;
       let weightChangeMessage = "";
-
-
-
-
-
-
-
-
-
 
 // Verifica se o peso aumentou ou diminuiu
 if (weightDifference > 0) {
@@ -1093,31 +1068,6 @@ function generatePDF() {
     buttons.forEach(button => button.style.display = "inline-block");
 }
  </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     
 <!-- GRAFICO EVOLUTIVO -->
 
@@ -1141,8 +1091,6 @@ function generatePDF() {
    
     //Função para capturar os dados do localStorage e formatar corretamente
 
-
-
     function getWeightData() { 
     let userData = extractUserData();
     let records = userData.history || [];
@@ -1162,8 +1110,6 @@ function generatePDF() {
 }
 
 <!-- BLOCO 3 -->
-
-
 
 // BLOCO 3 - Gráfico em Barras Verticais
 function updateChart() {
@@ -1334,8 +1280,6 @@ function atualizarFraseMotivacional() {
   // 👇 Adiciona aqui o total de registros
   document.getElementById("registroCount").textContent = `Total de registros: ${labels.length}`;
 }
-
-
 
 <!-- BLOCO 5 --> – Função para Baixar PDF
 
@@ -1960,6 +1904,7 @@ function openImageSettings() {
   // 👤 Verificar dados de perfil salvos
   let userId = localStorage.getItem('userId');
   let userName = localStorage.getItem('userName');
+
   const tituloPerfil = document.querySelector('#userForm h3');
 
   if (tituloPerfil) {
@@ -1973,11 +1918,11 @@ function openImageSettings() {
     document.getElementById('editButton').style.display = 'inline';
 
     
-    <!--  ✅ Acrescentei aqui a linha -->
     document.getElementById('editButton').textContent = 'Editar perfil'; // ✅ Linha adicionada
 
     if (tituloPerfil) {
       tituloPerfil.textContent = "Você pode editar seu perfil a qualquer momento.";
+      tituloPerfil.style.color = "#7f8c8d"; // 👈 Garante que a cor seja aplicada à frase
     }
 
   } else {
@@ -1986,6 +1931,7 @@ function openImageSettings() {
 
   if (tituloPerfil) {
     tituloPerfil.textContent = "Preencha seu perfil para iniciarmos sua jornada!";
+    tituloPerfil.style.color = "#7f8c8d"; // 👈 Garante que a cor seja aplicada à frase
   }
 }
 
@@ -2014,8 +1960,12 @@ function openImageSettings() {
       document.getElementById('chooseAnotherButton').style.display = 'inline-block';
       document.getElementById('saveImageButton').style.display = 'inline-block';
 
+
       // **Aqui está a alteração da frase**
-      document.getElementById('dynamicMessage').innerText = "Imagem carregada. Você pode escolher outra ou salvar essa imagem.";
+      const dynamicMsg = document.getElementById('dynamicMessage');
+dynamicMsg.innerText = "Imagem carregada. Você pode escolher outra ou salvar essa.";
+dynamicMsg.style.color = "#008000";
+dynamicMsg.style.fontWeight = "normal";
 
 // Ajustando o tamanho da fonte da frase dinamicamente
 document.getElementById('dynamicMessage').style.fontSize = "12px"; // Ajuste o valor conforme necessário
