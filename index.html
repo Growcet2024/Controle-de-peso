@@ -49,20 +49,38 @@ h2 {
   color: #ffffff; /* ou qualquer outra cor */
 }
 
+/* Estilizando o botão Acessar com o estilo principal */
 .btn-acessar {
   padding: 12px 24px;
-  background: #007BFF;
-  border: none;
-  border-radius: 25px;
-  color: white;
-  font-size: 18px;
+  background: linear-gradient(to bottom, #02779e, #02779e); /* Cor botão acessar com gradiente */
+  border: 2px solid #5fa5b4; /* Borda fina e definida */
+  color: white; /* Cor da fonte */
+  font-size: 18px; /* Tamanho da fonte */
   text-decoration: none;
   cursor: pointer;
+  border-radius: 20px; /* Arredondamento */
+  position: relative; /* Necessário para o ::before */
+  overflow: hidden; /* Garante que o brilho não vaze */
   transition: background 0.3s;
 }
 
+/* Brilho plástico por cima */
+.btn-acessar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to bottom, #FFFFFF66, #FFFFFF00); /* Efeito translúcido */
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  pointer-events: none;
+}
+
+/* Efeito hover para o botão Acessar */
 .btn-acessar:hover {
-  background: #0056b3;
+  background: linear-gradient(to bottom, #0393bb, #0393bb); /* Gradiente para hover */
 }
 
   </style>
@@ -84,4 +102,5 @@ h2 {
   </script>
 </body>
 </html>
+
 
