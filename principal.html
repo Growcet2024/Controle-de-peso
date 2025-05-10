@@ -20,7 +20,7 @@
     <style>
 body {
   font-family: Arial, sans-serif;
-    background-color: #FFFFFF; /* fUNDO sob o fundo */
+    background-color: #f0f4f8  ; /* fUNDO sob o fundo */
     margin: 0;
     padding: 0;
     display: flex;
@@ -68,9 +68,9 @@ button {
 /* Estilizando os botões */
 button {
     background: linear-gradient(to bottom, #02779e, #02779e);  /* Gradiente sutil para profundidade */
-    color: white;
+    color: #ffffff;   /* Cor da fonte */
     cursor: pointer;
-    border: 1.5px solid #5fa5b4 /* Borda fina e definida no botão*/
+    border: 2px solid #5fa5b4; /* Borda fina e definida no botão*/
     font-size: 15px; /* Tamanho fonte 4 botão*/
     border-radius: 20px;          /* Para arredondar e combinar com o brilho */
     position: relative;          /* Necessário para o ::before */
@@ -141,7 +141,7 @@ button:hover {
   /* Estilizando os botões com efeito glossy = IMC*/
 #toggleButton {
     background: linear-gradient(to bottom, #02779e, #02779e);  /* Gradiente sutil para profundidade */
-    color: white;
+    color: #ffffff; /* Cor da fonte */
     padding: 14px;
     font-size: 15px; /* Tamanho fonte botão imc*/
     border: none;
@@ -177,7 +177,7 @@ button::before {
     font-size: 16px;
     cursor: pointer;
     background-color: #1a9652;
-    color: white;
+    color: rgb(174, 47, 47);
     border: none;
     border-radius: 5px;
     margin-top: 10px;
@@ -194,7 +194,7 @@ button::before {
   font-size: 15px !important; /* Tamanho fonte botão historico*/
   cursor: pointer;
   background: linear-gradient(to bottom, #02779e, #02779e);  /* Gradiente sutil para profundidade */
-  color: white;
+  color: #ffffff; /* Cor da fonte */
   border: none;
   border-radius: 20px; /* Bordas mais arredondadas */
   margin-top: 1px;
@@ -234,7 +234,7 @@ button::before {
   /* 👇 Aqui está a borda */
   border: 1px solid #0393bb;   /* Cor borda lista */
   border-radius: 10px;          /* Cantos arredondados */
-  background-color: #ffffff;    /* Fundo claro */
+  background-color: #fdfefe ;    /* Fundo secundário */
 }
 
   /*  👇 Ajuste fonte e cor titulos em lista de historico */
@@ -288,8 +288,8 @@ button::before {
     top: 20px;
     right: 20px;
     z-index: 101;
-    color: #7f8c8d    ;
-    background: #f0f4f8;
+    color: #7f8c8d ; /* Cor 3 tracinhos menu */
+    background: #f0f4f8  ; /* Cor fundo 3 tracinhos menu */
     border-radius: 5px;
     padding: 5px 10px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
@@ -300,7 +300,7 @@ button::before {
     width: 250px;
     height: 100%;
     background: linear-gradient(to right, #02779e, #02779eCC);
-    color: white;
+    color: #ffffff;
     position: fixed;
     top: 0;
     right: -250px;
@@ -340,7 +340,7 @@ button::before {
   margin-top: 5px;      /* 👈 margem superior adicionada */  
   margin-bottom: 10px; /* 👈 margem inferior adicionada */
   border-radius: 10px;
-  background-color: #ffffff;
+  background-color: #fdfefe ; /* 👈 Fundo secundário */
 }
 
 /* Estilizando os botões com efeito glossy = Perfil*/
@@ -351,7 +351,7 @@ button::before {
   font-size: 15px; /* Tamanho fonte botão perfil*/
   cursor: pointer;
   background: linear-gradient(to bottom, #02779e, #02779e);  /* Gradiente sutil para profundidade */
-  color: white;
+  color: #ffffff;   /* Cor da fonte */
   border: none;
   border-radius: 20px; /* Bordas arredondadas */
   transition: background-color 0.3s ease, transform 0.2s ease;
@@ -397,13 +397,12 @@ button::before {
 
 
 /* 🎨 IMAGEM DA TELA */
-   
 #imageFileInputContainer {
   border: 1px solid #0393bb;
   padding: 10px;
   margin-top: 0px;
   border-radius: 10px;
-  background-color: #ffffff;
+  background-color:#fdfefe; /* 👈 margem inferior adicionada */
 }
 
 #dynamicMessage {
@@ -432,6 +431,7 @@ button::before {
   text-decoration: underline;
 }
 
+
 /* 🎨 Campos de preencher */
 input, textarea, select {
   background-color: #fafcfd; /* Ou um branco levemente cinza tipo #fdfefe */
@@ -440,6 +440,9 @@ input, textarea, select {
   padding: 10px;
   border-radius: 20px;
 }
+
+
+
 
 
 </style>
@@ -467,10 +470,10 @@ input, textarea, select {
         <p id="userInfo" style="font-weight: bold; font-size: 16px; margin-bottom: 5px;"></p>
     
         <p id="userId" style="display: none;"></p>
-    
+
         <!-- Campos de peso e data -->
         <input type="number" id="currentWeight" placeholder="Digite o peso atual" />
-    
+
         <!-- Título "Data:" -->
         <label for="dateInput"></label>
     
@@ -488,12 +491,11 @@ input, textarea, select {
         <!-- Campo resultado peso saldo e IMC -->
         <p id="resultDisplay">Peso Saldo: - kg | IMC: -</p>
 
-
 <!-- Botão para exibir/esconder o Gráfico -->
 <button id="toggleGraphButton" onclick="toggleGraph()">Gráfico evolutivo</button>
 
 <div id="graphSection" style="display: none;">
-    <div id="graphContainer" style="background: #fdfefe; padding: 10px; min-width: 400px;">
+    <div id="graphContainer" style="background: #fdfefe ; padding: 10px; min-width: 400px;">
       <canvas id="weightChart" width="600"></canvas>
 
       <div style="margin-top: 10px; text-align: left; font-size: 11px; color: #2c3e50;">
@@ -518,6 +520,8 @@ input, textarea, select {
   
     </div>
   </div>
+
+
   
 <!-- Botão para exibir/esconder o Gerar relatório -->
 <button id="toggleReportButton" onclick="toggleReport()">Gerar relatório</button>
@@ -530,7 +534,6 @@ input, textarea, select {
     Após abrir o PDF, toque nos três pontinhos e escolha compartilhar no WhatsApp, imprimir ou salvar novamente.
   </div>
 </div>
-
 
         <!-- Botão IMC -->
 <button id="toggleButton" onclick="toggleTable()">Mostrar tabela imc</button>
