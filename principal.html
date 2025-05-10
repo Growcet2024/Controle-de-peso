@@ -432,6 +432,14 @@ button::before {
   text-decoration: underline;
 }
 
+/* 🎨 Campos de preencher */
+input, textarea, select {
+  background-color: #fafcfd; /* Ou um branco levemente cinza tipo #fdfefe */
+  border: 1.5px solid #02779e ; /* Cinza claro neutro para manter leveza */
+  color: #2c3e50 ; /* Texto escuro suave */
+  padding: 10px;
+  border-radius: 20px;
+}
 
 
 </style>
@@ -485,7 +493,7 @@ button::before {
 <button id="toggleGraphButton" onclick="toggleGraph()">Gráfico evolutivo</button>
 
 <div id="graphSection" style="display: none;">
-    <div id="graphContainer" style="background: white; padding: 10px; min-width: 400px;">
+    <div id="graphContainer" style="background: #fdfefe; padding: 10px; min-width: 400px;">
       <canvas id="weightChart" width="600"></canvas>
 
       <div style="margin-top: 10px; text-align: left; font-size: 11px; color: #2c3e50;">
