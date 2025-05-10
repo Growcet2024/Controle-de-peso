@@ -100,7 +100,8 @@ button:hover {
     padding: 0;
 }
 
-#imcTable {
+ /* 🎨 IMC */
+ #imcTable {
     width: 100%;
     margin-top: 20px;
     border-collapse: separate; /* Mude de collapse para separate */
@@ -113,19 +114,26 @@ button:hover {
 #imcTable th,
 #imcTable td {
     padding: 14px;
-    border: 1px solid #ee5c5c;  /* Cor da borda IMC */
+    border: 5px solid #ee5c5c;  /* Cor da borda IMC */
     text-align: left;
+    font-size: 14px;           /* Tamanho da fonte */
+    color: #7f8c8d ;         /* Cor do texto (azul escuro clássico) */
 }
+
+#imcTable td {
+  background-color: #fdfefe ; /* Seu fundo secundário suave */
+}
+
 
 #imcTable th {
   background-color: #02779e  ;  /* Cor da tabela IMC */
-    color: white;
+    color: #ffffff; /* Cor titulo IMC */
 }
 
 /* Resultados e outros textos */
 #resultDisplay {
     font-weight: bold;
-    font-size: 16px;
+    font-size: 10px;
     margin-top: 10px;
 }
 
@@ -134,7 +142,7 @@ button:hover {
   margin-top: 1px; /* Distância de 10px do elemento acima */
   font-size: 15px;
   font-weight: bold;
-  color: #7f8c8d; /* Cor escura para o texto peso e imc */
+  color: #7f8c8d  ; /* Cor escura para o texto peso e imc */
 }
 
   /* Botão tabela IMC */
@@ -169,24 +177,7 @@ button::before {
     background: linear-gradient(to bottom, #0393bb, #0393bb);
 }
 
-
-/* Conteiner Histórico de Pesagem */
-/* Estilo do botão de Histórico de Pesagem */
-.historyButton {
-    padding: 22px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #1a9652;
-    color: rgb(174, 47, 47);
-    border: none;
-    border-radius: 5px;
-    margin-top: 10px;
-    transition: background-color 0.3s ease;
-}
-.historyButton:hover {
-    background-color: #2b9f0b;
-}
-
+/* 🎨 Histórico de pesagem */
 /* Estilizando os botões com efeito glossy = Histórico*/
 /* Estilo do botão de Histórico de Pesagem */
 .historyButton {
@@ -411,7 +402,6 @@ button::before {
   text-align: center;
 }
 
-
 /* 🎨 Imagem da tela padrão */
 .btn-resetar {
   background: none;
@@ -440,10 +430,6 @@ input, textarea, select {
   padding: 10px;
   border-radius: 20px;
 }
-
-
-
-
 
 </style>
     
@@ -521,8 +507,6 @@ input, textarea, select {
     </div>
   </div>
 
-
-  
 <!-- Botão para exibir/esconder o Gerar relatório -->
 <button id="toggleReportButton" onclick="toggleReport()">Gerar relatório</button>
 
@@ -542,7 +526,7 @@ input, textarea, select {
 <table id="imcTable" style="width: 100%; margin-top: 1px; margin-bottom: 10px; border-collapse: collapse; text-align: left; display: none;">
 
     <thead>
-        <tr style="background-color: #007bff; color: white;">
+        <tr style="background-color: #007bff; color: #ffffff;">
             <th style="padding: 8px; border: 1px solid #ddd;">Classificação</th>
             <th style="padding: 8px; border: 1px solid #ddd;">IMC</th>
         </tr>
@@ -576,7 +560,6 @@ input, textarea, select {
     </tbody>
 </table>
 
-
 <!-- Botão para exibir/esconder o Histórico -->
 <button id="toggleHistoryButton" onclick="toggleHistory()" class="historyButton">
     Histórico de Ppesagem
@@ -586,7 +569,6 @@ input, textarea, select {
   <div id="historySection" style="display: none;">
     <ul id="historyList"></ul>
   </div>
-
 
 <!--  /* 🎨 BOTÕES PERFIL */ -->
 
@@ -744,9 +726,7 @@ function resetarImagem() {
     document.getElementById('registerButton').style.display = 'none';
     document.getElementById('userForm').style.display = 'none'; // Formulário inicialmente oculto
   };
-
 </script>
-
 
 <script>
     // ========================== BLOCO DE EXTRAÇÃO DOS DADOS inicio ==========================
