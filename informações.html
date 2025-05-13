@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
             font-family: Arial, sans-serif;
             margin: 20px;
             padding: 0;
-            background-color: #f9f9f9;
+            background-color: #f0f4f8;
             text-align: center;
         }
 
@@ -20,9 +20,9 @@
         .container {
             max-width: 800px;
             margin: auto;
-            background: white;
+            background: #f0f4f8;
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 0px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             text-align: left;
         }
@@ -40,25 +40,53 @@
         }
 
         .botao-voltar {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 16px;
-            color: white;
-            background-color: #007bff;
-            border: 2px solid #007bff;
-            border-radius: 5px;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 24px; /* Tamanho do símbolo ">" */
+            color: #7f8c8d ;  /* Cor da seta */
+            background: linear-gradient(to bottom, #f0f4f8, #f0f4f8);  /* Gradiente glossy */
+            border: 2px solid #5fa5b4;  /* Borda azul clara */
+            border-radius: 5px;  /* Cantos arredondados */
+            padding: 5px 15px;  /* Espaço interno horizontal maior */
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);  /* Sombra suave igual ao menu */
+            cursor: pointer;
             text-decoration: none;
-            text-align: center;
-            margin-top: 20px;
-            display: block;
-            width: fit-content;
-            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            z-index: 101;
         }
 
-        .botao-voltar:hover {
-            background-color: white;
-            color: #007bff;
+        /* Brilho plástico por cima */
+        .botao-voltar::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to bottom, #FFFFFF66, #FFFFFF00); /* Efeito brilho */
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            pointer-events: none;
         }
+
+        /* Hover com tom mais claro */
+        .botao-voltar:hover {
+            background: linear-gradient(to bottom, #0393bb, #0393bb); 
+            border-color: #0393bb;
+        }
+
+        .botao-voltar {
+  width: 20px;
+  height: 30px;           /* ⬅️ altura fixa */
+  text-align: center;
+  line-height: 30px;      /* ⬅️ centraliza o símbolo verticalmente */
+}
+
+
     </style>
 </head>
 <body>
@@ -66,19 +94,10 @@
     <div class="container">
         <h2>Informações Importantes</h2>
 
-        <p class="pergunta">📍 Por que a localização pode não estar precisa?</p>
-        <p class="resposta">A precisão da localização no Google Maps pode variar em um raio de 50 metros. Isso ocorre devido a interferências de prédios, árvores, condições climáticas ou até mesmo a qualidade do GPS do seu dispositivo.</p>
+        <p class="pergunta">📍 Informações</p>
+        <p class="resposta">Coloque aqui as informações relevantes sobre o app, como versão, tecnologias utilizadas, e outras informações legais.</p>
 
-        <p class="pergunta">📡 Como melhorar a precisão da minha localização?</p>
-        <p class="resposta">Se notar que sua localização está imprecisa, tente desativar e reativar o GPS do seu celular. Além disso, estar ao ar livre ou próximo a uma janela pode melhorar a precisão do sinal.</p>
-
-        <p class="pergunta">⚙️ O que fazer se a localizaçção estiver errada?</p>
-        <p class="resposta">Se perceber que a localização não está correta, tente: Desativar e reativar a localização no seu dispositivo. Fechar e reabrir o aplicativo. Reiniciar seu smartphone para atualizar os serviços de localização.</i>.</p>
-
-        <p class="pergunta">📶 Preciso de internet para usar o aplicativo?</p>
-        <p class="resposta">Sim, a conexão com a internet é necessária para obter o endereço completo e compartilhar os dados pelo WhatsApp ou gerar um PDF.</p>
-
-        <a href="principal.html" class="botao-voltar">Voltar</a>
+        <a href="principal.html" class="botao-voltar">&gt;</a>
     </div>
 
 </body>
