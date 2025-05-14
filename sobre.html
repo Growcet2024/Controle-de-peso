@@ -3,21 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informações Importantes</title>
+    <title>Sobre o Aplicativo</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0px;
             padding: 0;
-            background-color: #f0f4f8;
+            background-color: #f0f4f8 ; 
             text-align: center;
         }
 
         h2 {
             color: #333;
         }
-
-
 
         .container {
     width: 100%;
@@ -34,80 +32,83 @@
 }
 
 
-
-
-        .pergunta {
-            font-weight: bold;
-            margin-top: 15px;
+        .titulo {
+            text-align: left;
+            font-size: 24px;
             color: #007bff;
+            margin-bottom: 20px;
         }
 
-        .resposta {
+        .texto {
             margin-bottom: 15px;
             line-height: 1.5;
             color: #333;
         }
 
         .botao-voltar {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            font-size: 24px; /* Tamanho do símbolo ">" */
-            color: #7f8c8d ;  /* Cor da seta */
-            background: linear-gradient(to bottom, #f0f4f8, #f0f4f8);  /* Gradiente glossy */
-            border: 2px solid #fdfefe;  /* Borda azul clara */
-            border-radius: 5px;  /* Cantos arredondados */
-            padding: 5px 15px;  /* Espaço interno horizontal maior */
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);  /* Sombra suave igual ao menu */
-            cursor: pointer;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            z-index: 101;
-        }
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 24px; /* Tamanho do símbolo ">" */
+    color: #7f8c8d ;  /* Cor da seta */
+    background: linear-gradient(to bottom, #f0f4f8, #f0f4f8);  /* Gradiente glossy */
+    border: 2px solid #fdfefe ;  /* Borda azul clara */
+    border-radius: 5px;  /* Cantos arredondados */
+    padding: 5px 15px;  /* Espaço interno horizontal maior */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);  /* Sombra suave igual ao menu */
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 101;
+}
 
-        /* Brilho plástico por cima */
-        .botao-voltar::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 50%;
-            background: linear-gradient(to bottom, #FFFFFF66, #FFFFFF00); /* Efeito brilho */
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
-            pointer-events: none;
-        }
+/* Brilho plástico por cima */
+.botao-voltar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to bottom, #FFFFFF66, #FFFFFF00); /* Efeito brilho */
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    pointer-events: none;
+}
 
-        /* Hover com tom mais claro */
-        .botao-voltar:hover {
-            background: linear-gradient(to bottom, #0393bb, #0393bb); 
-            border-color: #0393bb;
-        }
+/* Hover com tom mais claro */
+.botao-voltar:hover {
+    background: linear-gradient(to bottom, #0393bb, #0393bb); 
+    border-color: #0393bb;
+}
 
-        .botao-voltar {
+ .botao-voltar {
   width: 20px;
   height: 30px;           /* ⬅️ altura fixa */
   text-align: center;
   line-height: 30px;      /* ⬅️ centraliza o símbolo verticalmente */
 }
 
-
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h2>Informações Importantes</h2>
+        <h2 class="titulo">Sobre o Aplicativo</h2>
 
-        <p class="pergunta">📍 Informações</p>
-        <p class="resposta">Coloque aqui as informações relevantes sobre o app, como versão, tecnologias utilizadas, e outras informações legais.</p>
 
-        <a href="principal.html" class="botao-voltar">&gt;</a>
+        <p class="texto"><strong>📌 Descrição:</strong> Este aplicativo... conteúdo aqui</p>
+
+
+        
+        <p class="texto"><strong>📩 Desenvolvedor:</strong> Growcet
+
+            <a href="principal.html" class="botao-voltar">&gt;</a>
     </div>
 
 </body>
 </html>
+
