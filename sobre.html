@@ -17,6 +17,7 @@
             color: #333;
         }
 
+
         .container {
     width: 100%;
     max-width: 800px;
@@ -30,6 +31,7 @@
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
     min-height: 100vh;
 }
+
 
 
         .titulo {
@@ -92,23 +94,98 @@
   line-height: 30px;      /* ⬅️ centraliza o símbolo verticalmente */
 }
 
+/* ⬅️ Titulo */
+.titulo {
+    text-align: left;       /* Alinhamento à esquerda */
+    font-size: 20px;        /* Tamanho ajustável */
+    font-weight: bold;      /* Destaque */
+    color: #007bff;         /* Azul leve (padrão do app) */
+    margin-bottom: 20px;
+}
+
+/* ⬅️ Texto */
+.texto {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #333;             /* Cor padrão do texto */
+    font-size: 14px;         /* Tamanho base ajustável */
+    text-align: left;        /* Alinhamento à esquerda */
+}
+
+/* ⬅️ Compartilhar */
+.compartilhar-whatsapp {
+    font-size: 15px;                  /* Tamanho ajustável do texto */
+    color: #7e96e6;                   /* Cor do texto (cor do WhatsApp) */
+    font-weight: bold;                /* Para dar destaque ao texto */
+    text-decoration: none;            /* Remover sublinhado */
+    display: inline-block;            /* Para permitir a tarja abaixo */
+    position: relative;               /* Necessário para a tarja */
+    margin-top: 20px;                 /* Espaço superior */
+}
+
+.compartilhar-whatsapp::after {
+    content: "";                      /* Criar a tarja */
+    position: absolute;               /* Posicionar a tarja */
+    left: 0;
+    bottom: -5px;                     /* Distância da tarja do texto */
+    width: 100%;                      /* Tarja do mesmo tamanho do texto */
+    height: 2px;                      /* Espessura da tarja */
+    background-color: #edf11e;        /* Cor da tarja (cor do WhatsApp) */
+}
+
+
+
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h2 class="titulo">Sobre o Aplicativo</h2>
+        <h2 class="titulo">Sobre o "Vida Leve" </h2>
 
 
-        <p class="texto"><strong>📌 Descrição:</strong> Este aplicativo... conteúdo aqui</p>
+        <p class="texto">
+            Gostaria de compartilhar com vocês a história por trás da criação do "Vida Leve" e o motivo de ter sido uma ideia tão pessoal e significativa para mim.
+        </p>
+        
+        <p class="texto">
+            Em um breve período de descuido com a alimentação, cheguei a perder quase 6 quilos. Para muitas pessoas, isso poderia não ser tão impactante, mas para mim, que já tenho um peso naturalmente baixo, essa perda foi algo bastante expressivo.
+        </p>
+        
+        <p class="texto">
+            Foi nesse momento que percebi a importância de ter uma ferramenta que facilitasse o controle do peso de forma prática, intuitiva e fácil de usar. Foi aí que surgiu a ideia do "Vida Leve": um aplicativo simples, mas eficaz, que me ajudaria a acompanhar minha jornada de forma mais organizada e motivadora.
+        </p>
+        
+        <p class="texto">
+            Hoje, estou mais atento à minha alimentação e pesando-me regularmente, acompanhando o processo de forma evolutiva. Com perseverança, estamos alcançando o objetivo esperado — e esse progresso me motiva a continuar cuidando de mim todos os dias.
+        </p>
+        
+        <h2 class="titulo">O Objetivo do "Vida Leve"</h2>
+        
+        <p class="texto">
+            O "Vida Leve" foi criado com um propósito claro: ajudar pessoas a monitorar e melhorar sua saúde através do controle do peso e IMC. É uma ferramenta que oferece simplicidade e praticidade para que você possa registrar e acompanhar sua evolução ao longo do tempo, de maneira descomplicada.
+        </p>
+        
+        <p class="texto">
+            Seja você alguém que busca mais saúde, controle pessoal ou acompanhamento junto a profissionais da área, o "Vida Leve" é o app ideal para fazer essa jornada de forma mais organizada, leve e sem estresse.
+        </p>
+        
+        <p class="texto">
+            Com o "Vida Leve", o foco não está apenas nos números, mas em cuidar de você, de forma constante e motivada.
+        </p>
+        
 
+
+        <a href="https://api.whatsapp.com/send?text=Confira%20o%20aplicativo%20Vida%20Leve%20aqui:%20http://www.linkdovida.com" 
+   class="compartilhar-whatsapp" 
+   target="_blank">Compartilhe</a>
 
         
-   
+        
 
             <a href="principal.html" class="botao-voltar">&gt;</a>
     </div>
 
 </body>
 </html>
+
 
