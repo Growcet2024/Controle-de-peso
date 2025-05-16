@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Uso</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0px;
+            padding: 0;
+            background-color: #f0f4f8;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    overflow: hidden;
+    background: #f0f4f8;
+    border-radius: 0px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    min-height: 100vh;
+}
+
+        .botao-voltar {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 24px; /* Tamanho do símbolo ">" */
+            color: #7f8c8d ;  /* Cor da seta */
+            background: linear-gradient(to bottom, #f0f4f8, #f0f4f8);  /* Gradiente glossy */
+            border: 2px solid #f0f4f8 ;  /* Borda azul clara */
+            border-radius: 5px;  /* Cantos arredondados */
+            padding: 5px 15px;  /* Espaço interno horizontal maior */
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);  /* Sombra suave igual ao menu */
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            z-index: 101;
+        }
+
+        /* Brilho plástico por cima */
+        .botao-voltar::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to bottom, #FFFFFF66, #FFFFFF00); /* Efeito brilho */
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            pointer-events: none;
+        }
+
+        /* Hover com tom mais claro */
+        .botao-voltar:hover {
+            background: linear-gradient(to bottom, #0393bb, #0393bb); 
+            border-color: #0393bb;
+        }
+
+        .botao-voltar {
+  width: 20px;
+  height: 30px;           /* ⬅️ altura fixa */
+  text-align: center;
+  line-height: 30px;      /* ⬅️ centraliza o símbolo verticalmente */
+}
+
+h2 {
+    color: #007bff;           /* Azul forte */
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    text-align: left;         /* Alinhamento à esquerda */
+}
+
+
+.container h2 {
+    color: #02779e ;         /* Azul vibrante */ /* ⬅️ Titulo */
+    font-size: 20px;        /* Tamanho destacado */
+    font-weight: bold;      /* Negrito para dar destaque */
+    margin-bottom: 25px;    /* Espaço abaixo do título */
+    text-align: left;       /* Alinhamento à esquerda */
+}
+
+.subtitulo {
+    font-size: 16px;  /* ⬅️ Subtitulo 1 */
+    color: #2c3e50 ;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.pergunta {
+    font-size: 16px;      /* ⬅️ Subtitulo 2 */
+    font-weight: bold;
+    color: #02779e;           /* Azul coerente com o título */
+    margin-top: 25px;
+    text-align: left;         /* Alinhamento à esquerda */
+}
+
+.resposta {
+    font-size: 14px;   /* ⬅️ Conteúdo */
+    line-height: 1.6;
+    color: #2c3e50  ;
+    text-align: left;         /* Alinhamento à esquerda */
+    margin-bottom: 20px;
+}
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Guia de Uso</h2>
+        <p class="subtitulo">📘 Guia Rápido do Aplicativo "Vida Leve"</p>
+
+        <p class="pergunta">📌 O que você verá ao abrir o app:</p>
+        
+        <p class="resposta"><strong>1. Título – "Controle de Peso"</strong><br>
+        Logo no topo da tela, você verá o nome da funcionalidade principal do app.</p>
+        
+        <p class="resposta"><strong>2. Informações do Usuário</strong><br>
+        Exibe o nome e o ID único, por exemplo:<br>
+        <code>Usuário: Edson | ID: D82Yv8Fd</code></p>
+        
+        <p class="resposta"><strong>3. Campo para Digitar o Peso</strong><br>
+        Aqui você registra seu peso atual, facilitando o acompanhamento contínuo.</p>
+        
+        <p class="resposta"><strong>4. Botão: Adicionar Registro</strong><br>
+        Após digitar seu peso, clique aqui para salvar a informação.</p>
+        
+        <p class="resposta"><strong>5. Indicadores de Progresso: Peso Saldo e IMC</strong><br>
+        Exibidos automaticamente após cada registro. Exemplo:<br>
+        <code>Peso Saldo: -2.50 kg | IMC: 21.75</code><br>
+        O saldo mostra a diferença entre seu peso atual e o desejado, enquanto o IMC avalia sua proporção entre peso e altura.</p>
+        
+        <p class="resposta"><strong>6. Botão: Gráfico Evolutivo</strong><br>
+        Gera um gráfico com a evolução dos seus registros. Também permite gerar, baixar, imprimir e compartilhar um PDF — inclusive via WhatsApp.</p>
+        
+        <p class="resposta"><strong>7. Botão: Gerar Relatório</strong><br>
+        Cria um relatório completo com os dados de pesagem, similar ao gráfico, também com opção de PDF e compartilhamento.</p>
+        
+        <p class="resposta"><strong>8. Botão: Mostrar Tabela IMC</strong><br>
+        Apresenta a tabela com as faixas de classificação do IMC, para melhor interpretação do seu resultado.</p>
+        
+        <p class="resposta"><strong>9. Botão: Histórico de Pesagem</strong><br>
+        Lista todos os registros salvos, com datas e valores, para acompanhamento detalhado.</p>
+        
+        <p class="resposta"><strong>10. Botão: Criar Perfil ou Editar</strong><br>
+        Permite cadastrar ou modificar seus dados pessoais, como altura, peso desejado e nome.</p>
+        
+        <p class="resposta"><strong>11. Botão: Imagem da Tela</strong><br>
+        Personalize o fundo da tela inicial com uma imagem da sua galeria ou câmera. Também é possível restaurar a imagem padrão quando desejar.</p>
+        
+        <p class="resposta"><strong>12. Menu Sanduíche (☰)</strong><br>
+        Localizado no canto superior direito, dá acesso às demais abas do app, como "Voltar a tela inicial, Sobre", "Guia de Uso", entre outras.</p>
+        
+
+
+
+        
+        <a href="principal.html" class="botao-voltar">&gt;</a>
+    </div>
+
+</body>
+</html>
