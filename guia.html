@@ -103,7 +103,7 @@ h2 {
 }
 
 .pergunta {
-    font-size: 16px;      /* ⬅️ Subtitulo 2 */
+    font-size: 14px;      /* ⬅️ Subtitulo 2 */
     font-weight: bold;
     color: #02779e;           /* Azul coerente com o título */
     margin-top: 25px;
@@ -118,6 +118,11 @@ h2 {
     margin-bottom: 20px;
 }
 
+.icone {
+    color: #02779e;
+    font-weight: bold;
+}
+
 
     </style>
 </head>
@@ -125,16 +130,17 @@ h2 {
 
     <div class="container">
         <h2>Guia de Uso</h2>
-        <p class="subtitulo">📘 Guia Rápido do Aplicativo "Vida Leve"</p>
+        <p class="subtitulo">📘 Seja bem-vindo ao app Vida Leve! Abaixo você encontra um guia com os principais elementos da tela inicial para te ajudar a começar sua jornada com mais saúde e controle"</p>
 
-        <p class="pergunta">📌 O que você verá ao abrir o app:</p>
-        
+        <p class="pergunta">🧭 O que você verá ao abrir o app:</p>
+
+
         <p class="resposta"><strong>1. Título – "Controle de Peso"</strong><br>
         Logo no topo da tela, você verá o nome da funcionalidade principal do app.</p>
         
         <p class="resposta"><strong>2. Informações do Usuário</strong><br>
         Exibe o nome e o ID único, por exemplo:<br>
-        <code>Usuário: Edson | ID: D82Yv8Fd</code></p>
+        <code>Usuário: Seu nome | ID: D82Yv8Fd</code></p>
         
         <p class="resposta"><strong>3. Campo para Digitar o Peso</strong><br>
         Aqui você registra seu peso atual, facilitando o acompanhamento contínuo.</p>
@@ -147,28 +153,68 @@ h2 {
         <code>Peso Saldo: -2.50 kg | IMC: 21.75</code><br>
         O saldo mostra a diferença entre seu peso atual e o desejado, enquanto o IMC avalia sua proporção entre peso e altura.</p>
         
-        <p class="resposta"><strong>6. Botão: Gráfico Evolutivo</strong><br>
-        Gera um gráfico com a evolução dos seus registros. Também permite gerar, baixar, imprimir e compartilhar um PDF — inclusive via WhatsApp.</p>
+        <p class="resposta"><strong> 6. Botão: Gráfico Evolutivo</strong><br>
+            Gera um gráfico com a evolução dos seus registros, exibindo os dados do usuário, datas e a quantidade de registros inseridos. Também permite gerar, baixar, imprimir e compartilhar um PDF — inclusive via WhatsApp.</p>
         
         <p class="resposta"><strong>7. Botão: Gerar Relatório</strong><br>
-        Cria um relatório completo com os dados de pesagem, similar ao gráfico, também com opção de PDF e compartilhamento.</p>
+            Cria um relatório detalhado com todos os registros de pesagem, apresentados em uma tabela contendo: data, peso atual, saldo de peso e IMC.
+            Além dos dados técnicos, o relatório inclui duas frases automáticas e personalizadas:
+            
+            A primeira resume o histórico com base no número total de registros e a variação acumulada desde a primeira pesagem.
+            
+            A segunda é uma mensagem motivacional dinâmica, que se adapta ao seu progresso — destacando se você está próximo da meta, abaixo ou acima do peso desejado, ou se já a atingiu.
+            
+            Todo esse conteúdo pode ser gerado em PDF, com opção de baixar, imprimir ou compartilhar diretamente via WhatsApp.</p>
         
         <p class="resposta"><strong>8. Botão: Mostrar Tabela IMC</strong><br>
-        Apresenta a tabela com as faixas de classificação do IMC, para melhor interpretação do seu resultado.</p>
+            Exibe uma tabela com as faixas de classificação do IMC (Índice de Massa Corporal), ajudando a interpretar melhor seus resultados. Essa referência é essencial para entender em que faixa você se encontra e acompanhar possíveis mudanças ao longo do tempo. 🔎 Como o IMC é calculado?
+            O IMC é obtido por meio da seguinte fórmula:
+            
+            IMC = Peso (kg) ÷ [Altura (m)]²
+            
+            Exemplo:
+            Se você pesa 60 kg e mede 1,70 m, o cálculo será:
+            IMC = 60 ÷ (1,70 × 1,70) = 70 ÷ 2,89 = 20,76.
+         </p>
         
-        <p class="resposta"><strong>9. Botão: Histórico de Pesagem</strong><br>
-        Lista todos os registros salvos, com datas e valores, para acompanhamento detalhado.</p>
+         <p class="resposta"><strong>10. Botão: Criar Perfil ou Editar</strong><br>
+            Este botão permite cadastrar ou atualizar suas informações pessoais, que são:
         
-        <p class="resposta"><strong>10. Botão: Criar Perfil ou Editar</strong><br>
-        Permite cadastrar ou modificar seus dados pessoais, como altura, peso desejado e nome.</p>
+            Nome do usuário, Altura e Peso desejado.
+            
+            ℹ️ Ao abrir o app pela primeira vez, o botão será exibido como "Criar Perfil". Nesse momento, os campos estão vazios, prontos para preenchimento.
+            
+            🔁 Após o cadastro inicial, o botão muda automaticamente para "Editar Perfil". Os campos permanecem preenchidos com as informações salvas, facilitando alterações futuras.
+            
+            🆔 Ao salvar o perfil pela primeira vez, é gerado um ID único vinculado ao usuário. Esse ID não muda, mesmo que o perfil seja editado, garantindo a continuidade dos dados.
+        </p>
         
         <p class="resposta"><strong>11. Botão: Imagem da Tela</strong><br>
-        Personalize o fundo da tela inicial com uma imagem da sua galeria ou câmera. Também é possível restaurar a imagem padrão quando desejar.</p>
-        
-        <p class="resposta"><strong>12. Menu Sanduíche (☰)</strong><br>
-        Localizado no canto superior direito, dá acesso às demais abas do app, como "Voltar a tela inicial, Sobre", "Guia de Uso", entre outras.</p>
-        
+            Permite personalizar a imagem de fundo da tela inicial do app, deixando-o com a sua cara.
 
+            Ao tocar no botão, abre-se a opção "Escolher Arquivo", que oferece duas possibilidades: usar a câmera ou selecionar uma imagem da galeria do dispositivo.
+            Após escolher a imagem, ela é exibida em pré-visualização para conferência. Abaixo, são exibidos dois botões:
+            
+            Escolher outra: permite substituir a imagem selecionada por uma nova.
+            
+            Salvar essa: define a imagem como plano de fundo da tela inicial.
+            
+            🖼️ O botão "Usar imagem padrão" permite que você retorne à imagem original do app a qualquer momento, com um único toque.
+            
+            Essa função traz mais personalização e identidade visual para sua experiência com o Vida Leve.
+            
+            </p>
+        
+            <p class="resposta"><strong>12. Botão: Menu Sanduíche (☰)</strong><br>
+                Localizado no canto superior direito da tela, esse botão abre um painel lateral com as principais abas do aplicativo, como:<br>
+                • Voltar à tela inicial<br>
+                • Sobre<br>
+                • Guia de Uso<br>
+                <br>
+                
+                📂 Ao clicar, a aba desliza da direita para a esquerda. Clicando novamente no ícone, ela se recolhe, voltando à visualização normal do app.
+                </p>
+                
 
 
         
